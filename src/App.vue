@@ -7,13 +7,24 @@
 </template>
 
 <script>
+import {mapState, mapActions} from 'vuex'
 export default {
   name: 'App',
+  computed: {
+    ...mapState({
+      theme: state => state.index.theme
+    })
+  },
   methods: {
+    ...mapActions({
+      setTheme: 'index/setTheme'
+    }),
     changeColor (theme) {
-      let html = document.documentElement || document.body
-      html.setAttribute('data-theme', theme)
+      this.setTheme(theme)
     }
+  },
+  mounted () {
+    this.setTheme()
   }
 }
 </script>

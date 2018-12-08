@@ -14,5 +14,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-
+  .home-header {
+    height: $header-h;
+  }
 </style>
