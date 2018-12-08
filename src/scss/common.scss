@@ -1,0 +1,11 @@
+@import './text';
+
+.min-h {
+  min-height: calc(100vh - #{$header-h} - #{$footer-h});
+}
+.min-w {
+  min-width: 1248px;
+  box-sizing: border-box;
+  padding-left: 24px;
+  padding-right: 24px;
+}

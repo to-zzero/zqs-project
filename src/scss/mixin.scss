@@ -1,0 +1,60 @@
+@mixin fontColor ($i: a) {
+  [data-theme="dark"] & {
+    $list: map-get($map: $colors-obj, $key: dark);
+    color: map-get($map: $list, $key: $i);
+  }
+  [data-theme="light"] & {
+    $list: map-get($map: $colors-obj, $key: light);
+    color: map-get($map: $list, $key: $i);
+  }
+}
+
+@mixin bgColor ($i: a) {
+  [data-theme="dark"] & {
+    $list: map-get($map: $colors-obj, $key: dark);
+    background-color: map-get($map: $list, $key: $i);
+  }
+  [data-theme="light"] & {
+    $list: map-get($map: $colors-obj, $key: light);
+    background-color: map-get($map: $list, $key: $i);
+  }
+}
+
+@mixin getBg ($i: a) {
+  [data-theme="dark"] & {
+    $list: map-get($map: $bg-obj, $key: dark);
+    background-image: url(#{map-get($map: $list, $key: $i)});
+  }
+  [data-theme="light"] & {
+    $list: map-get($map: $bg-obj, $key: light);
+    background-image: url(#{map-get($map: $list, $key: $i)});
+  }
+}
+
+@mixin font_size($size){/*通过该函数设置字体大小，后期方便统一管理；*/
+  @include font-dpr($size);
+}
+
+/*px转rem*/
+@mixin px2rem($property,$px,$px2:false,$px3:false,$px4:false){
+	$rem:75px;/* 设计稿尺寸/10 */
+  @if $px and $px2 and $px3 and $px4 {
+    #{$property}: ($px / $rem) + rem ($px2 / $rem) + rem ($px3 / $rem) + rem ($px4 / $rem) + rem;
+  }
+  @else if $px and $px2 {
+		#{$property}: ($px / $rem) + rem ($px2 / $rem) + rem;
+		//[data-model='pad'] & {#{$property}: ($px * 1.4 / $rem) + rem ($px2 * 1.4 / $rem) + rem;}
+	}
+	@else{
+		#{$property}: ($px / $rem) + rem!important;
+		//[data-model='pad'] & {#{$property}: ($px * 1.4 / $rem) + rem;}
+	}
+}
+
+/*根据dpr计算font-size*/
+@mixin font-dpr($font-size){
+	font-size: $font-size;
+	//[data-model="pad"] & { font-size: $font-size * 1.4; }
+	[data-dpr="2"] & { font-size: $font-size * 2;}
+  [data-dpr="3"] & { font-size: $font-size * 3;}
+}

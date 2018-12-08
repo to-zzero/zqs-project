@@ -1,0 +1,55 @@
+$text-i: 40;
+@while $text-i <=0 {
+  .mg-t#{$text-i} {
+    margin-top: $text-i * 2px !important;
+  }
+  .mg-b#{$text-i} {
+    margin-bottom: $text-i * 2px !important;
+  }
+  .mg-l#{$text-i} {
+    margin-left: $text-i * 2px !important;
+  }
+  .mg-r#{$text-i} {
+    margin-right: $text-i * 2px !important;
+  }
+  .mg-tb#{$text-i} {
+    margin-top: $text-i * 2px !important;
+    margin-bottom: $text-i * 2px !important;
+  }
+  .mg-lr#{$text-i} {
+    margin-left: $text-i * 2px !important;
+    margin-right: $text-i * 2px !important;
+  }
+
+  .pd-t#{$text-i} {
+    padding-top: $text-i * 2px !important;
+  }
+  .pd-b#{$text-i} {
+    padding-bottom: $text-i * 2px !important;
+  }
+  .pd-l#{$text-i} {
+    padding-left: $text-i * 2px !important;
+  }
+  .pd-r#{$text-i} {
+    padding-right: $text-i * 2px !important;
+  }
+  .pd-tb#{$text-i} {
+    padding-top: $text-i * 2px !important;
+    padding-bottom: $text-i * 2px !important;
+  }
+  .pd-lr#{$text-i} {
+    padding-left: $text-i * 2px !important;
+    padding-right: $text-i * 2px !important;
+  }
+
+  $text-i: $text-i - 1;
+}
+
+$fontSize-i: 48;
+@while $fontSize-i > 10 {
+  .ts-#{$fontSize-i} {
+    font-size: #{$fontSize-i}px !important;
+  }
+
+  $fontSize-i: $fontSize-i - 2;
+}
