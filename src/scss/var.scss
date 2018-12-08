@@ -19,13 +19,11 @@ $colors-obj: (
 
 // 背景文件 数组
 $dark-bg-list: (
-  a: '/static/v2-2c19e594c3d7b283b2bd25664aa7dd39_b.jpg',
-  b: '/static/v2-5b7aeaac0a3b387431e04027ed316759_b.jpg'
+  mainBg: '/static/bg/dark.jpg'
 );
 
 $light-bg-list: (
-  a: '/static/v2-2dbef9e766899ebe9f80cc919a3ebb08_b.jpg',
-  b: '/static/v2-be6b9088509ea0bafffdfc657ea145ea_b.jpg'
+  mainBg: '/static/bg/light.jpg'
 );
 
 // 背景文件 对象

@@ -11,9 +11,10 @@ export default {
 </script>
 <style lang="scss">
   #app {
+    transition: background .5s;
     @include fontColor(a);
     @include bgColor(b);
-    @include getBg(a);
+    @include getBg(mainBg);
     background-repeat: no-repeat;
     background-position: center;
   }
