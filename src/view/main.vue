@@ -1,18 +1,27 @@
 <template>
   <div class="zqs-main">
-
+    <home-header></home-header>
+      <section class="min-h">
+        <router-view class="min-h"></router-view>
+      </section>
+    <home-footer></home-footer>
   </div>
 </template>
 
 <script>
-  export default {
-    name: 'zqs_main',
-    data() {
-      return {}
-    }
+import HomeHeader from './home/header'
+import HomeFooter from './home/footer'
+export default {
+  name: 'zqs_main',
+  data () {
+    return {}
+  },
+  components: {
+    HomeHeader,
+    HomeFooter
   }
+}
 </script>
 
 <style scoped lang="scss">
-
 </style>

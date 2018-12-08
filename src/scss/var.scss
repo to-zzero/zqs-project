@@ -1,0 +1,35 @@
+$header-h: 50px;
+$footer-h: 120px;
+
+// 主题色 数组
+$dark-colors-list: (
+  a: #ccc,
+  b: teal
+);
+$light-colors-list: (
+  a: red,
+  b: blue
+);
+
+// 主题色 对象
+$colors-obj: (
+  dark: $dark-colors-list,
+  light: $light-colors-list
+);
+
+// 背景文件 数组
+$dark-bg-list: (
+  a: '/static/v2-2c19e594c3d7b283b2bd25664aa7dd39_b.jpg',
+  b: '/static/v2-5b7aeaac0a3b387431e04027ed316759_b.jpg'
+);
+
+$light-bg-list: (
+  a: '/static/v2-2dbef9e766899ebe9f80cc919a3ebb08_b.jpg',
+  b: '/static/v2-be6b9088509ea0bafffdfc657ea145ea_b.jpg'
+);
+
+// 背景文件 对象
+$bg-obj: (
+  dark: $dark-bg-list,
+  light: $light-bg-list
+);
