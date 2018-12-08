@@ -16,6 +16,6 @@ export default {
 
 <style scoped lang="scss">
   .home-footer {
-    height: 120px;
+    height: $footer-h;
   }
 </style>
