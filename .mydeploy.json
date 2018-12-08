@@ -1,0 +1,16 @@
+{
+    "mode": "webhook",
+    "url": "https://github.com/userzqs/zqs-project.git",
+    "localdir": "/usr/my-project/zqs-server",
+    "branch": "master",
+    "hook": {
+        "postchanged": "pm2 reload zqs-server"
+    },
+    "port": "3001",
+    "rules": [
+        {
+            "type": "commit",
+            "value": "^Reload"
+	}
+    ]
+}
