@@ -1,33 +1,96 @@
+@function getList ($obj, $key) {
+  @return map-get($map: $obj, $key: $key);
+};
+@function getListValue ($valueList, $i) {
+  @return map-get($map: $valueList, $key: $i)
+};
+
 @mixin fontColor ($i: a) {
   @each $themeKey in $theme-list {
     [data-theme="#{$themeKey}"] &{
-      $list: map-get($map: $colors-obj, $key: #{$themeKey});
-      color: map-get($map: $list, $key: $i);
+      $list: getList($colors-obj, $themeKey);
+      color: getListValue($list, $i);
     }
   }
-}
+};
+
+@mixin fontColor_rgba ($i: a, $o: .9) {
+  @each $themeKey in $theme-list {
+    [data-theme="#{$themeKey}"] &{
+      $list: getList($colors-obj, $themeKey);
+      color: rgba($color: getListValue($list, $i), $alpha: $o);
+    }
+  }
+};
 
 @mixin bgColor ($i: a) {
   @each $themeKey in $theme-list {
     [data-theme="#{$themeKey}"] &{
-      $list: map-get($map: $colors-obj, $key: #{$themeKey});
-      background-color: map-get($map: $list, $key: $i);
+      $list: getList($colors-obj, $themeKey);
+      background-color: getListValue($list, $i);
     }
   }
-}
+};
+
+@mixin bgColor_rgba ($i: a, $o: .9) {
+  @each $themeKey in $theme-list {
+    [data-theme="#{$themeKey}"] &{
+      $list: getList($colors-obj, $themeKey);
+      background-color: rgba($color: getListValue($list, $i), $alpha: $o);
+    }
+  }
+};
+
+@mixin borderColor ($i: a) {
+  @each $themeKey in $theme-list {
+    [data-theme="#{$themeKey}"] &{
+      $list: getList($colors-obj, $themeKey);
+      border-color: getListValue($list, $i);
+    }
+  }
+};
+
+@mixin borderColor_rgba ($width: 1px, $style: solid, $color: a, $direction: all, $o: .9) {
+  @each $themeKey in $theme-list {
+    [data-theme="#{$themeKey}"] &{
+      $list: getList($colors-obj, $themeKey);
+      @if $direction== top {
+        border-top-width: $width;
+        border-top-style: $style;
+        border-top-color: rgba($color: getListValue($list, $color), $alpha: $o);
+      } @else if $direction== bottom {
+        border-bottom-width: $width;
+        border-bottom-style: $style;
+        border-bottom-color: rgba($color: getListValue($list, $color), $alpha: $o);
+      } @else if $direction== left {
+        border-left-width: $width;
+        border-left-style: $style;
+        border-left-color: rgba($color: getListValue($list, $color), $alpha: $o);
+      } @else if $direction== right {
+        border-right-width: $width;
+        border-right-style: $style;
+        border-right-color: rgba($color: getListValue($list, $color), $alpha: $o);
+      } @else if $direction== all {
+        border-width: $width;
+        border-style: $style;
+        border-color: rgba($color: getListValue($list, $color), $alpha: $o);
+      }
+    }
+  }
+};
 
 @mixin getBg ($i: a) {
   @each $themeKey in $theme-list {
     [data-theme="#{$themeKey}"] &{
       $list: map-get($map: $bg-obj, $key: #{$themeKey});
-      background-image: url(#{map-get($map: $list, $key: $i)});
+      background-image: url(#{getListValue($list, $i)});
     }
   }
-}
+};
 
 @mixin font_size($size){/*通过该函数设置字体大小，后期方便统一管理；*/
   @include font-dpr($size);
-}
+};
 
 /*px转rem*/
 @mixin px2rem($property,$px,$px2:false,$px3:false,$px4:false){
@@ -43,7 +106,7 @@
 		#{$property}: ($px / $rem) + rem!important;
 		//[data-model='pad'] & {#{$property}: ($px * 1.4 / $rem) + rem;}
 	}
-}
+};
 
 /*根据dpr计算font-size*/
 @mixin font-dpr($font-size){
@@ -51,4 +114,4 @@
 	//[data-model="pad"] & { font-size: $font-size * 1.4; }
 	[data-dpr="2"] & { font-size: $font-size * 2;}
   [data-dpr="3"] & { font-size: $font-size * 3;}
-}
+};
