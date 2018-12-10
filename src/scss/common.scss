@@ -9,3 +9,14 @@
   padding-left: 24px;
   padding-right: 24px;
 }
+.overflow-hidden {
+  overflow: hidden;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  } to {
+    transform: rotate(360deg);
+  }
+}

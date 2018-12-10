@@ -1,7 +1,7 @@
 <template>
   <div class="zqs-main">
     <home-header></home-header>
-      <my-img src="/static/theme_img/dark/1.jpg"></my-img>
+      <my-img class="img" src="/static/bg/dark.jpg"></my-img>
       <section class="min-h">
         <router-view class="min-h"></router-view>
       </section>
@@ -25,4 +25,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
+  .img {
+    width: 200px;
+    height: 200px;
+  }
 </style>
