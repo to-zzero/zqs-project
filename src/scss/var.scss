@@ -1,6 +1,12 @@
 $header-h: 50px;
 $footer-h: 120px;
 
+// 主题 key 数组
+$theme-list: (
+  dark,
+  light
+);
+
 // 主题色 数组
 $dark-colors-list: (
   a: #ccc,

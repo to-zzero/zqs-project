@@ -1,33 +1,27 @@
 @mixin fontColor ($i: a) {
-  [data-theme="dark"] & {
-    $list: map-get($map: $colors-obj, $key: dark);
-    color: map-get($map: $list, $key: $i);
-  }
-  [data-theme="light"] & {
-    $list: map-get($map: $colors-obj, $key: light);
-    color: map-get($map: $list, $key: $i);
+  @each $themeKey in $theme-list {
+    [data-theme="#{$themeKey}"] &{
+      $list: map-get($map: $colors-obj, $key: #{$themeKey});
+      color: map-get($map: $list, $key: $i);
+    }
   }
 }
 
 @mixin bgColor ($i: a) {
-  [data-theme="dark"] & {
-    $list: map-get($map: $colors-obj, $key: dark);
-    background-color: map-get($map: $list, $key: $i);
-  }
-  [data-theme="light"] & {
-    $list: map-get($map: $colors-obj, $key: light);
-    background-color: map-get($map: $list, $key: $i);
+  @each $themeKey in $theme-list {
+    [data-theme="#{$themeKey}"] &{
+      $list: map-get($map: $colors-obj, $key: #{$themeKey});
+      background-color: map-get($map: $list, $key: $i);
+    }
   }
 }
 
 @mixin getBg ($i: a) {
-  [data-theme="dark"] & {
-    $list: map-get($map: $bg-obj, $key: dark);
-    background-image: url(#{map-get($map: $list, $key: $i)});
-  }
-  [data-theme="light"] & {
-    $list: map-get($map: $bg-obj, $key: light);
-    background-image: url(#{map-get($map: $list, $key: $i)});
+  @each $themeKey in $theme-list {
+    [data-theme="#{$themeKey}"] &{
+      $list: map-get($map: $bg-obj, $key: #{$themeKey});
+      background-image: url(#{map-get($map: $list, $key: $i)});
+    }
   }
 }
 
