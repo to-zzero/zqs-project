@@ -14,7 +14,7 @@
 <script>
 import Velocity from 'velocity-animate'
 export default {
-  name: 'my-transition',
+  name: 'my_transition',
   data () {
     return {}
   },
@@ -22,8 +22,7 @@ export default {
     beforeEnter: {
       type: Function,
       default: function (el) {
-        // el.style.opacity = 0
-        console.log('方块显示动画即将执行')
+        console.log('显示动画即将执行')
       }
     },
     enter: {
@@ -31,9 +30,6 @@ export default {
       default: function (el, done) {
         Velocity(el, 'stop')
         Velocity(el, {
-          // opacity: 1,
-          // translateX: 260,
-          // rotateZ: ['360deg', 0]
           scale: [1, 1.2]
         },
         {
@@ -41,19 +37,19 @@ export default {
           easing: [ 0.4, 0.01, 0.165, 0.99 ],
           complete: done
         })
-        console.log('方块显示动画执行中...')
+        console.log('显示动画执行中...')
       }
     },
     afterEnter: {
       type: Function,
       default: function (el) {
-        console.log('方块显示动画结束')
+        console.log('显示动画结束')
       }
     },
     beforeLeave: {
       type: Function,
       default: function (el) {
-        console.log('方块隐藏动画即将执行')
+        console.log('隐藏动画即将执行')
       }
     },
     leave: {
@@ -61,9 +57,6 @@ export default {
       default: function (el, done) {
         Velocity(el, 'stop')
         Velocity(el, {
-          // opacity: 0,
-          // translateX: 0,
-          // rotateZ: ['0deg', 0]
           scale: [1.2, 1]
         },
         {
@@ -71,13 +64,13 @@ export default {
           easing: [ 0.4, 0.01, 0.165, 0.99 ],
           complete: done
         })
-        console.log('方块隐藏动画执行中...')
+        console.log('隐藏动画执行中...')
       }
     },
     afterLeave: {
       type: Function,
       default: function (el) {
-        console.log('方块隐藏动画结束')
+        console.log('隐藏动画结束')
       }
     }
   },
@@ -85,7 +78,3 @@ export default {
   }
 }
 </script>
-
-<style scoped lang="scss">
-
-</style>
