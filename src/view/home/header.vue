@@ -3,6 +3,7 @@
     header
     <button @click="changeColor('dark')">深色</button>
     <button @click="changeColor('light')">浅色</button>
+    {{theme}}
   </header>
 </template>
 

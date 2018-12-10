@@ -1,6 +1,7 @@
 <template>
   <div class="zqs-main">
     <home-header></home-header>
+      <my-img src="/static/theme_img/dark/1.jpg"></my-img>
       <section class="min-h">
         <router-view class="min-h"></router-view>
       </section>
