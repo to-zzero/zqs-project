@@ -10,11 +10,15 @@ $theme-list: (
 // 主题色 数组
 $dark-colors-list: (
   a: #ccc,
-  b: teal
+  b: teal,
+  btn-noraml_border: #aabbff,
+  btn-noraml_bg: #ffffff
 );
 $light-colors-list: (
   a: red,
-  b: blue
+  b: blue,
+  btn-noraml_border: skyblue,
+  btn-noraml_bg: #aabbff
 );
 
 // 主题色 对象

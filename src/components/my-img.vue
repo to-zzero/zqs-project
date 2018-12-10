@@ -1,12 +1,10 @@
 <template>
   <!-- 图片统一错误处理 -->
   <div>
-    <my-transition
-      v-if="loading">
+    <my-transition v-if="loading">
       <div class="img-loading"></div>
     </my-transition>
-    <my-transition
-      v-else-if="showImg">
+    <my-transition v-else-if="showImg">
       <img
         @click="$emit('click')"
         :src="defaultSrc || realSrc"
@@ -20,7 +18,7 @@
 <script>
 import {mapState} from 'vuex'
 export default {
-  name: 'my-img',
+  name: 'my_img',
   data () {
     return {
       defaultSrc: '',
@@ -86,6 +84,7 @@ export default {
       width: 20px;
       height: 20px;
       border-radius: 50%;
+      box-sizing: border-box;
       @include borderColor_rgba(3px, solid, b, left, .8);
       @include borderColor_rgba(3px, solid, b, right, .8);
       @include borderColor_rgba(3px, solid, b, bottom, .8);

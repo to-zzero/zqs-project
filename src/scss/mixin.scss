@@ -50,7 +50,7 @@
   }
 };
 
-@mixin borderColor_rgba ($width: 1px, $style: solid, $color: a, $direction: all, $o: .9) {
+@mixin borderColor_rgba ($width: 1px, $style: solid, $color: a, $direction: all, $o: 1) {
   @each $themeKey in $theme-list {
     [data-theme="#{$themeKey}"] &{
       $list: getList($colors-obj, $themeKey);

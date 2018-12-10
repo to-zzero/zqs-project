@@ -1,8 +1,8 @@
 <template>
   <header class="home-header">
     header
-    <button @click="changeColor('dark')">深色</button>
-    <button @click="changeColor('light')">浅色</button>
+    <my-btn @click="changeColor('dark')">深色</my-btn>
+    <my-btn @click="changeColor('light')">浅色</my-btn>
     {{theme}}
   </header>
 </template>
