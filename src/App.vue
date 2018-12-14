@@ -5,6 +5,7 @@
 </template>
 
 <script>
+// import {addUser, queryId} from './http/api'
 export default {
   name: 'App'
 }
