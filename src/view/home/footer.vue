@@ -1,6 +1,6 @@
 <template>
   <footer class="home-footer">
-    footer
+    改变一下打包后的js哈希。
   </footer>
 </template>
 
