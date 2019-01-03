@@ -11,32 +11,32 @@
 </template>
 
 <script>
-export default {
-  name: 'enter_name',
-  props: {
-    height: {
-      type: Number
+  export default {
+    name: 'main_img',
+    props: {
+      height: {
+        type: Number
+      },
+      innerHeight: {
+        type: Number
+      }
     },
-    innerHeight: {
-      type: Number
-    }
-  },
-  data () {
-    return {
-    }
-  },
-  methods: {
-    beforeEnter (el) {
-      el.style.height = 0
+    data () {
+      return {
+      }
     },
-    enter (el, done) {
-      console.log(this.height ? `${this.height}px` : 'calc(100vh - 50px)')
-      el.style.transition = 'height .3s'
-      el.style.height = this.height ? `${this.height}px` : 'calc(100vh - 50px)'
-      done()
+    methods: {
+      beforeEnter (el) {
+        el.style.height = 0
+      },
+      enter (el, done) {
+        console.log(this.height ? `${this.height}px` : 'calc(100vh - 50px)')
+        el.style.transition = 'height .3s'
+        el.style.height = this.height ? `${this.height}px` : 'calc(100vh - 50px)'
+        done()
+      }
     }
   }
-}
 </script>
 
 <style scoped lang="scss">

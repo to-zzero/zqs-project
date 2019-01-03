@@ -5,13 +5,13 @@
 </template>
 
 <script>
-export default {
-  name: 'home_footer',
-  data () {
-    return {
+  export default {
+    name: 'home_footer',
+    data () {
+      return {
+      }
     }
   }
-}
 </script>
 
 <style scoped lang="scss">

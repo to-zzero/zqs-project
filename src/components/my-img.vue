@@ -16,57 +16,57 @@
 </template>
 
 <script>
-import {mapState} from 'vuex'
-export default {
-  name: 'my_img',
-  data () {
-    return {
-      defaultSrc: '',
-      loading: true,
-      showImg: false
-    }
-  },
-  props: {
-    src: {
-      type: String,
-      required: true
+  import {mapState} from 'vuex'
+  export default {
+    name: 'my_img',
+    data () {
+      return {
+        defaultSrc: '',
+        loading: true,
+        showImg: false
+      }
     },
-    alt: {
-      type: [String, Number],
-      default: 'zqs'
-    }
-  },
-  computed: {
-    ...mapState({
-      imgStaticSrc: state => `/static/theme_img/${state.index.theme}`
-    }),
-    realSrc () {
-      const src = this.src
-      const reg = /\/static\/theme_img\/[a-zA-Z]+\//gi
-      if (reg.test(src)) {
-        const matchPart = src.match(reg)[0]
-        const result = src.replace(matchPart, '/')
-        return `${this.imgStaticSrc}${result}`
-      } else {
-        return src
+    props: {
+      src: {
+        type: String,
+        required: true
+      },
+      alt: {
+        type: [String, Number],
+        default: 'zqs'
+      }
+    },
+    computed: {
+      ...mapState({
+        imgStaticSrc: state => `/static/theme_img/${state.index.theme}`
+      }),
+      realSrc () {
+        const src = this.src
+        const reg = /\/static\/theme_img\/[a-zA-Z]+\//gi
+        if (reg.test(src)) {
+          const matchPart = src.match(reg)[0]
+          const result = src.replace(matchPart, '/')
+          return `${this.imgStaticSrc}${result}`
+        } else {
+          return src
+        }
+      }
+    },
+    created () {
+      let img = document.createElement('img')
+      img.src = this.realSrc
+      img.onload = () => {
+        this.loading = false
+        this.showImg = true
+      }
+    },
+    methods: {
+      error (err) {
+        this.defaultSrc = '/static/theme_img/dark/v2-2dbef9e766899ebe9f80cc919a3ebb08_b.jpg'
+        console.log(err)
       }
     }
-  },
-  created () {
-    let img = document.createElement('img')
-    img.src = this.realSrc
-    img.onload = () => {
-      this.loading = false
-      this.showImg = true
-    }
-  },
-  methods: {
-    error (err) {
-      this.defaultSrc = '/static/theme_img/dark/v2-2dbef9e766899ebe9f80cc919a3ebb08_b.jpg'
-      console.log(err)
-    }
   }
-}
 </script>
 
 <style scoped lang="scss">

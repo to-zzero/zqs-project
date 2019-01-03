@@ -5,6 +5,7 @@
   @return map-get($map: $valueList, $key: $i)
 };
 
+// 字体颜色
 @mixin fontColor ($i: a) {
   @each $themeKey in $theme-list {
     [data-theme="#{$themeKey}"] &{
@@ -14,6 +15,7 @@
   }
 };
 
+// 字体颜色 透明
 @mixin fontColor_rgba ($i: a, $o: .9) {
   @each $themeKey in $theme-list {
     [data-theme="#{$themeKey}"] &{
@@ -23,6 +25,7 @@
   }
 };
 
+// 背景色
 @mixin bgColor ($i: a) {
   @each $themeKey in $theme-list {
     [data-theme="#{$themeKey}"] &{
@@ -32,6 +35,7 @@
   }
 };
 
+// 背景色 透明
 @mixin bgColor_rgba ($i: a, $o: .9) {
   @each $themeKey in $theme-list {
     [data-theme="#{$themeKey}"] &{
@@ -41,6 +45,7 @@
   }
 };
 
+// 边框颜色
 @mixin borderColor ($i: a) {
   @each $themeKey in $theme-list {
     [data-theme="#{$themeKey}"] &{
@@ -50,6 +55,7 @@
   }
 };
 
+// 边框颜色 透明
 @mixin borderColor_rgba ($width: 1px, $style: solid, $color: a, $direction: all, $o: 1) {
   @each $themeKey in $theme-list {
     [data-theme="#{$themeKey}"] &{
@@ -79,11 +85,22 @@
   }
 };
 
+// 背景图
 @mixin getBg ($i: a) {
   @each $themeKey in $theme-list {
     [data-theme="#{$themeKey}"] &{
-      $list: map-get($map: $bg-obj, $key: #{$themeKey});
+      $list: getList($bg-obj, $themeKey);
       background-image: url(#{getListValue($list, $i)});
+    }
+  }
+};
+
+// 阴影色
+@mixin boxShadow ($i: a) {
+  @each $themeKey in $theme-list {
+    [data-theme="#{$themeKey}"] &{
+      $list: getList($colors-obj, $themeKey);
+      box-shadow: getListValue($list, $i);
     }
   }
 };

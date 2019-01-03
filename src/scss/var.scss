@@ -1,24 +1,32 @@
 $header-h: 50px;
 $footer-h: 120px;
 
-// 主题 key 数组
+// 主题 key
 $theme-list: (
   dark,
   light
 );
 
-// 主题色 数组
+// 主题色
 $dark-colors-list: (
+  transparent: transparent,
   a: #ccc,
   b: teal,
   btn-noraml_border: #aabbff,
-  btn-noraml_bg: #ffffff
+  btn-noraml_bg: #ffffff,
+  drop-down_content: #000,
+  drop-down_content-shadow: 0 2px 8px 0 rgba(255, 255, 255, 0.3),
+  drop-down_triangle: -1px 1px 3px -1px rgba(255, 255, 255, 0.3)
 );
 $light-colors-list: (
+  transparent: transparent,
   a: red,
   b: blue,
   btn-noraml_border: skyblue,
-  btn-noraml_bg: #aabbff
+  btn-noraml_bg: #aabbff,
+  drop-down_content: #fff,
+  drop-down_content-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.3),
+  drop-down_triangle: -1px 1px 3px -1px rgba(0, 0, 0, 0.3)
 );
 
 // 主题色 对象
@@ -27,7 +35,7 @@ $colors-obj: (
   light: $light-colors-list
 );
 
-// 背景文件 数组
+// 背景文件
 $dark-bg-list: (
   mainBg: '/static/bg/light.jpg'
 );

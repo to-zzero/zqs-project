@@ -12,69 +12,78 @@
 </template>
 
 <script>
-import Velocity from 'velocity-animate'
-export default {
-  name: 'my_transition',
-  data () {
-    return {}
-  },
-  props: {
-    beforeEnter: {
-      type: Function,
-      default: function (el) {
-        console.log('显示动画即将执行')
+  import Velocity from 'velocity-animate'
+
+  export default {
+    name: 'my_transition',
+    data () {
+      return {
+        defaultEnterEasing: [ 0.4, 0.01, 0.165, 0.99 ],
+        defaultLeaveEasing: [ 0.4, 0.01, 0.165, 0.99 ],
+        defaultEnterAnimate: {scale: [1, 1.2]},
+        defaultLeaveAnimate: {scale: [1.2, 1]},
+        defaultEnterDuration: 400,
+        defaultLeaveDuration: 200
       }
     },
-    enter: {
-      type: Function,
-      default: function (el, done) {
+    props: {
+      enterAnimate: Object,
+      leaveAnimate: Object,
+      enterOption: {
+        type: Object,
+        default () {
+          return {}
+        }
+      },
+      leaveOption: {
+        type: Object,
+        default () {
+          return {}
+        }
+      }
+    },
+    methods: {
+      beforeEnter (el) {
+        this.$emit('beforeEnter', this.$event)
+      },
+      enter (el, done) {
+        let option = Object.assign({
+          duration: this.defaultEnterDuration,
+          easing: this.defaultEnterEasing
+        }, this.enterOption)
         Velocity(el, 'stop')
-        Velocity(el, {
-          scale: [1, 1.2]
-        },
+        Velocity(el,
+        this.enterAnimate || this.defaultEnterAnimate,
         {
-          duration: 400,
-          easing: [ 0.4, 0.01, 0.165, 0.99 ],
+          ...option,
           complete: done
         })
         console.log('显示动画执行中...')
-      }
-    },
-    afterEnter: {
-      type: Function,
-      default: function (el) {
+      },
+      afterEnter (el) {
         console.log('显示动画结束')
-      }
-    },
-    beforeLeave: {
-      type: Function,
-      default: function (el) {
+      },
+      beforeLeave (el) {
         console.log('隐藏动画即将执行')
-      }
-    },
-    leave: {
-      type: Function,
-      default: function (el, done) {
+      },
+      leave (el, done) {
+        let option = Object.assign({
+          duration: this.defaultLeaveDuration,
+          easing: this.defaultLeaveEasing
+        }, this.leaveOption)
         Velocity(el, 'stop')
-        Velocity(el, {
-          scale: [1.2, 1]
-        },
+        Velocity(el,
+        this.leaveAnimate || this.defaultLeaveAnimate,
         {
-          duration: 200,
-          easing: [ 0.4, 0.01, 0.165, 0.99 ],
+          ...option,
           complete: done
         })
         console.log('隐藏动画执行中...')
-      }
-    },
-    afterLeave: {
-      type: Function,
-      default: function (el) {
+      },
+      afterLeave (el) {
+        this.$emit('afterLeave', this.$event)
         console.log('隐藏动画结束')
       }
     }
-  },
-  methods: {
   }
-}
 </script>

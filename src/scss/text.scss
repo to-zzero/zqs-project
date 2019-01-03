@@ -1,45 +1,45 @@
-$text-i: 40;
-@while $text-i <=0 {
+$text-i: 80;
+@while $text-i >= 0 {
   .mg-t#{$text-i} {
-    margin-top: $text-i * 2px !important;
+    margin-top: $text-i * 1px !important;
   }
   .mg-b#{$text-i} {
-    margin-bottom: $text-i * 2px !important;
+    margin-bottom: $text-i * 1px !important;
   }
   .mg-l#{$text-i} {
-    margin-left: $text-i * 2px !important;
+    margin-left: $text-i * 1px !important;
   }
   .mg-r#{$text-i} {
-    margin-right: $text-i * 2px !important;
+    margin-right: $text-i * 1px !important;
   }
   .mg-tb#{$text-i} {
-    margin-top: $text-i * 2px !important;
-    margin-bottom: $text-i * 2px !important;
+    margin-top: $text-i * 1px !important;
+    margin-bottom: $text-i * 1px !important;
   }
   .mg-lr#{$text-i} {
-    margin-left: $text-i * 2px !important;
-    margin-right: $text-i * 2px !important;
+    margin-left: $text-i * 1px !important;
+    margin-right: $text-i * 1px !important;
   }
 
   .pd-t#{$text-i} {
-    padding-top: $text-i * 2px !important;
+    padding-top: $text-i * 1px !important;
   }
   .pd-b#{$text-i} {
-    padding-bottom: $text-i * 2px !important;
+    padding-bottom: $text-i * 1px !important;
   }
   .pd-l#{$text-i} {
-    padding-left: $text-i * 2px !important;
+    padding-left: $text-i * 1px !important;
   }
   .pd-r#{$text-i} {
-    padding-right: $text-i * 2px !important;
+    padding-right: $text-i * 1px !important;
   }
   .pd-tb#{$text-i} {
-    padding-top: $text-i * 2px !important;
-    padding-bottom: $text-i * 2px !important;
+    padding-top: $text-i * 1px !important;
+    padding-bottom: $text-i * 1px !important;
   }
   .pd-lr#{$text-i} {
-    padding-left: $text-i * 2px !important;
-    padding-right: $text-i * 2px !important;
+    padding-left: $text-i * 1px !important;
+    padding-right: $text-i * 1px !important;
   }
 
   $text-i: $text-i - 1;
