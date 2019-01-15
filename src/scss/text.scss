@@ -53,3 +53,42 @@ $fontSize-i: 48;
 
   $fontSize-i: $fontSize-i - 2;
 }
+
+.flex-box {
+  display: flex;
+  align-items: center;
+
+  &.space-between {
+    justify-content: space-between;
+  }
+  &.space-around {
+    justify-content: space-around;
+  }
+  &.flex-start {
+    justify-content: flex-start;
+  }
+  &.flex-end {
+    justify-content: flex-end;
+  }
+
+  &.align-start {
+    align-items: flex-start;
+  }
+  &.align-end {
+    align-items: flex-end;
+  }
+
+  .flex-1 {
+    flex: 1;
+  }
+}
+
+.text-left {
+  text-align: left;
+}
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}

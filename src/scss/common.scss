@@ -1,23 +1,29 @@
 @import './text';
+@import './animate';
+@import './components/table.scss';
+@import './components/pagination.scss';
+
 body {
+  font-family: 'Open Sans', sans-serif;
   line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
 }
 
 .min-h {
   min-height: calc(100vh - #{$header-h} - #{$footer-h});
 }
 .min-w {
-  min-width: 1200px;
+  min-width: 1248px;
   box-sizing: border-box;
+  padding-left: 24px;
+  padding-right: 24px;
 }
 .overflow-hidden {
   overflow: hidden;
 }
-
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  } to {
-    transform: rotate(360deg);
-  }
+.ul-reset {
+  list-style: none;
+  padding-inline-start: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
 }

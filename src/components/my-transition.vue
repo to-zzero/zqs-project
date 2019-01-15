@@ -1,5 +1,6 @@
 <template>
   <transition
+    :mode="mode"
     @before-enter="beforeEnter"
     @enter="enter"
     @after-enter="afterEnter"
@@ -27,6 +28,10 @@
       }
     },
     props: {
+      mode: {
+        type: String,
+        default: 'in-out'
+      },
       enterAnimate: Object,
       leaveAnimate: Object,
       enterOption: {

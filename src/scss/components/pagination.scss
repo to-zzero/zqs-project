@@ -1,0 +1,33 @@
+.my-pagination {
+  .my-pagination_item {
+    min-width: 2em;
+    height: 2em;
+    text-align: center;
+    line-height: 2em;
+    border-radius: 2px;
+    padding: 0 4px;
+    box-sizing: border-box;
+
+    &:not(.disabled) {
+      cursor: pointer;
+    }
+    &.disabled {
+      cursor: not-allowed;
+      @include bgColor(b);
+      @include fontColor(b);
+    }
+
+    &.pagination-active {
+      @include bgColor(b);
+      @include fontColor(a);
+    }
+    &:not(.pagination-active):not(.disabled) {
+      @include bgColor(a);
+      @include fontColor(b);
+    }
+
+    &:not(:last-of-type) {
+      margin-right: 8px;
+    }
+  }
+}

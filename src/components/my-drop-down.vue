@@ -25,7 +25,8 @@
         @beforeEnter="beforeEnter"
         @afterLeave="afterLeave">
         <div
-          class="scroll-content pd-lr16">
+          @click="isShow = false"
+          class="scroll-content">
           <slot name="content"></slot>
         </div>
       </my-transition>
@@ -49,11 +50,13 @@
         content: null,
         enterAnimate: {
           height: '',
-          padding: '8px 16px'
+          paddingTop: '8px',
+          paddingBottom: '8px'
         },
         leaveAnimate: {
           height: '0px',
-          padding: '0px 16px'
+          paddingTop: '0px',
+          paddingBottom: '0px'
         },
         enterOption: {
           duration: 300
@@ -109,13 +112,14 @@
   }
   .my-drop-down {
     position: relative;
+    display: inline-block;
     .drop-down_content {
       position: absolute;
-      @include bgColor(drop-down_content);
-      @include fontColor(a);
-      @include boxShadow(drop-down_content-shadow);
       border-radius: 4px;
       z-index: 98;
+      transition: background .3s;
+      @include bgColor(drop-down_content);
+      @include boxShadow(drop-down_content-shadow);
       .scroll-content {
         position: relative;
         z-index: 100;
@@ -133,6 +137,7 @@
     z-index: 99;
     width: 0px;
     height: 0px;
+    transition: border-color .3s;
     @include boxShadow(drop-down_triangle);
   }
 

@@ -1,0 +1,29 @@
+.my-table {
+  max-width: 1200px;
+  width: 100%;
+  table {
+    width: 100%;
+  }
+  tr {
+    padding: 0;
+    td {
+      &:not(:last-of-type):not(:first-of-type) {
+        padding: 12px 8px 12px 0;
+      }
+      &:last-of-type {
+        padding: 12px 16px 12px 0;
+      }
+      &:first-of-type {
+        padding: 12px 8px 12px 16px;
+      }
+    }
+  }
+
+  .tr-row {
+    box-shadow: inset 0px -1px 0px black;
+    &:hover {
+      background: red;
+      box-shadow: unset;
+    }
+  }
+}

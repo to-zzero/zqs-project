@@ -2,7 +2,7 @@ import * as types from './mutation_type'
 import {getStorage, setStorage} from '../../js/until'
 import {themeList} from '../../js/constant'
 
-const defaultTheme = themeList[0]
+const defaultTheme = themeList[0].theme
 
 function setTheme (theme = defaultTheme) {
   setStorage('theme', theme)

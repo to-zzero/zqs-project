@@ -1,6 +1,6 @@
 <template>
   <div
-    class="min-w"
+    class="app"
     id="app">
     <router-view/>
   </div>
@@ -20,4 +20,7 @@
   //   background-repeat: no-repeat;
   //   background-position: center;
   // }
+  .app {
+    min-width: 1248px;
+  }
 </style>
