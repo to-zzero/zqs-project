@@ -6,11 +6,11 @@
     </my-transition>
     <my-transition v-else-if="showImg">
       <img
-        @click="$emit('click')"
+        class="my-img"
         :src="defaultSrc || realSrc"
         :alt="alt"
         @error="error"
-        class="my-img">
+        @click="$emit('click')">
     </my-transition>
   </div>
 </template>

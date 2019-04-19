@@ -3,6 +3,8 @@ import Router from 'vue-router'
 
 import Main from '@/view/main.vue'
 
+const CircleProgress = () => import('@/view/canvas/circle_progress')
+
 Vue.use(Router)
 
 const mainChildren = [
@@ -11,6 +13,11 @@ const mainChildren = [
   //   name: 'Main',
   //   component: Main
   // }
+  {
+    path: '/canvas',
+    name: 'canvas',
+    component: CircleProgress
+  }
 ]
 
 const routes = [

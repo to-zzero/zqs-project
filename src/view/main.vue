@@ -1,8 +1,9 @@
 <template>
   <div class="zqs-main min-w">
     <home-header></home-header>
+    <!-- <zqs-canvas></zqs-canvas> -->
 
-    <my-table
+    <!-- <my-table
       @row-click="click"
       :data-list="dataList">
       <my-table-column
@@ -38,7 +39,7 @@
           <span @click="click">{{name}}</span>
         </template>
       </my-table-column>
-    </my-table>
+    </my-table> -->
     <section class="min-h">
       <my-transition
         :enter-animate="enterAnimate"
@@ -56,6 +57,7 @@
 <script>
   import HomeHeader from './home/header'
   import HomeFooter from './home/footer'
+  import ZqsCanvas from './canvas.vue'
   export default {
     name: 'zqs_main',
     data () {
@@ -81,7 +83,8 @@
     },
     components: {
       HomeHeader,
-      HomeFooter
+      HomeFooter,
+      ZqsCanvas
     },
     methods: {
       click () {

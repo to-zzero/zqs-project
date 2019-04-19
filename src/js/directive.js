@@ -8,3 +8,10 @@ Vue.directive('visible', {
     el.style.visibility = binding.value ? 'visible' : 'hidden'
   }
 })
+
+Vue.directive('loading', {
+  inserted (el, binding) {
+    if (binding.value) {
+    }
+  }
+})

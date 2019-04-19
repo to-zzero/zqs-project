@@ -1,13 +1,13 @@
 <template>
   <transition
     :mode="mode"
+    :css="false"
     @before-enter="beforeEnter"
     @enter="enter"
     @after-enter="afterEnter"
     @before-leave="beforeLeave"
     @leave="leave"
-    @after-leave="afterLeave"
-    :css="false">
+    @after-leave="afterLeave">
     <slot></slot>
   </transition>
 </template>
